@@ -28,10 +28,6 @@ namespace MyTrips.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField usernameTextField { get; set; }
 
-        [Action ("UIButton206_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton206_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (loginButton != null) {
