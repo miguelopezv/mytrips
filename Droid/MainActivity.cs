@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using System;
 using MyTrips.Classes;
+using Android.Content;
 
 namespace MyTrips.Droid
 {
@@ -29,8 +30,8 @@ namespace MyTrips.Droid
         private void onClickLogin(object sender, EventArgs args) { 
             if (LoginClass.onLogin(usernameEditText.Text, passwordEditText.Text))
             {
-            } else {
-                //TODO: Go to main page
+                Intent intent = new Intent(this, typeof(NewTripActivity));
+                StartActivity(intent);
             }
         }
     }
