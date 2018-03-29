@@ -2,6 +2,8 @@
 using Android.Widget;
 using Android.OS;
 using System;
+using MyTrips.Classes;
+using Android.Content;
 
 namespace MyTrips.Droid
 {
@@ -18,19 +20,18 @@ namespace MyTrips.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            usernameEditText.FindViewById<EditText>(Resource.Id.usernameEditText);
-            passwordEditText.FindViewById<EditText>(Resource.Id.passwordEditText);
-            loginButton.FindViewById<Button>(Resource.Id.loginButton);
+            usernameEditText = FindViewById<EditText>(Resource.Id.usernameEditText);
+            passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
+            loginButton = FindViewById<Button>(Resource.Id.loginButton);
            
             loginButton.Click += onClickLogin;
         }
 
         private void onClickLogin(object sender, EventArgs args) { 
-            if (string.IsNullOrEmpty(usernameEditText.Text) || string.IsNullOrEmpty(passwordEditText.Text))
+            if (LoginClass.onLogin(usernameEditText.Text, passwordEditText.Text))
             {
-
-            } else {
-                //TODO: Go to main page
+                Intent intent = new Intent(this, typeof(ListTripsActivity));
+                StartActivity(intent);
             }
         }
     }

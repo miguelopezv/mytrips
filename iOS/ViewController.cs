@@ -1,12 +1,13 @@
 ﻿using System;
-
+using Foundation;
+using MyTrips.Classes;
 using UIKit;
 
 namespace MyTrips.iOS
 {
     public partial class ViewController : UIViewController
     {
-        int count = 1;
+        bool canNavigate = false;
 
         public ViewController(IntPtr handle) : base(handle)
         {
@@ -17,18 +18,38 @@ namespace MyTrips.iOS
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view, typically from a nib.
-            Button.AccessibilityIdentifier = "myButton";
-            Button.TouchUpInside += delegate
-            {
-                var title = string.Format("{0} clicks!", count++);
-                Button.SetTitle(title, UIControlState.Normal);
-            };
+            loginButton.TouchDown += LoginButton_TouchDown;
+
+            NavigationController.SetNavigationBarHidden(true, false);
         }
+
+        void LoginButton_TouchDown(object sender, EventArgs e)
+        {
+            if (LoginClass.onLogin(usernameTextField.Text, passwordTextField.Text))
+            {
+                canNavigate = true;
+            }
+        }
+
 
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.		
         }
-    }
+
+		public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+		{
+            if (segueIdentifier == "goToMainPageSegue")
+            {
+                if(canNavigate)
+                {
+                    return true;  
+                }
+            } else {
+                return false;
+            }
+            return false;
+		}
+	}
 }

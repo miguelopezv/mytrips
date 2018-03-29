@@ -44,14 +44,35 @@ namespace MyTrips.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050002
-			public const int loginButton = 2131034114;
+			// aapt resource value: 0x7f070009
+			public const int addMenu = 2131165193;
 			
-			// aapt resource value: 0x7f050001
-			public const int passwordEditText = 2131034113;
+			// aapt resource value: 0x7f070006
+			public const int departureDatePicker = 2131165190;
 			
-			// aapt resource value: 0x7f050000
-			public const int usernameEditText = 2131034112;
+			// aapt resource value: 0x7f070004
+			public const int loginButton = 2131165188;
+			
+			// aapt resource value: 0x7f070003
+			public const int passwordEditText = 2131165187;
+			
+			// aapt resource value: 0x7f070005
+			public const int placeEditText = 2131165189;
+			
+			// aapt resource value: 0x7f070007
+			public const int returnDatePicker = 2131165191;
+			
+			// aapt resource value: 0x7f070008
+			public const int saveButton = 2131165192;
+			
+			// aapt resource value: 0x7f070000
+			public const int tripToolbar = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int tripsListView = 2131165185;
+			
+			// aapt resource value: 0x7f070002
+			public const int usernameEditText = 2131165186;
 			
 			static Id()
 			{
@@ -67,7 +88,13 @@ namespace MyTrips.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int ListTrips = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int NewTrip = 2130903042;
 			
 			static Layout()
 			{
@@ -79,11 +106,30 @@ namespace MyTrips.Droid
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int Add = 2131099648;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class Mipmap
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ic_add = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
 			
 			static Mipmap()
 			{
@@ -110,6 +156,22 @@ namespace MyTrips.Droid
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int AppTheme = 2131034112;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
