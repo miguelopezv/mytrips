@@ -33,6 +33,9 @@
     <Compile Include="Classes\Trip.cs" />
     <Compile Include="Classes\DbHelper.cs" />
     <Compile Include="Classes\Helpers\Constants.cs" />
+    <Compile Include="Classes\Categories.cs" />
+    <Compile Include="Classes\SearchResult.cs" />
+    <Compile Include="Classes\Helpers\Foursquare.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
