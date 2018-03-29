@@ -1,4 +1,5 @@
 ﻿using System;
+using Foundation;
 using MyTrips.Classes;
 using UIKit;
 
@@ -6,6 +7,8 @@ namespace MyTrips.iOS
 {
     public partial class ViewController : UIViewController
     {
+        bool canNavigate = false;
+
         public ViewController(IntPtr handle) : base(handle)
         {
         }
@@ -15,16 +18,16 @@ namespace MyTrips.iOS
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view, typically from a nib.
-            loginButton.TouchUpInside += LoginButton_TouchUpInside;
+            loginButton.TouchDown += LoginButton_TouchDown;
+
+            NavigationController.SetNavigationBarHidden(true, false);
         }
 
-        void LoginButton_TouchUpInside(object sender, EventArgs e)
+        void LoginButton_TouchDown(object sender, EventArgs e)
         {
             if (LoginClass.onLogin(usernameTextField.Text, passwordTextField.Text))
             {
-
-            } else {
-                //TODO: Navigate to next page
+                canNavigate = true;
             }
         }
 
@@ -34,5 +37,19 @@ namespace MyTrips.iOS
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.		
         }
-    }
+
+		public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+		{
+            if (segueIdentifier == "goToMainPageSegue")
+            {
+                if(canNavigate)
+                {
+                    return true;  
+                }
+            } else {
+                return false;
+            }
+            return false;
+		}
+	}
 }
