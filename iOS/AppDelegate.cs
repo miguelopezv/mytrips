@@ -20,6 +20,12 @@ namespace MyTrips.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+            UINavigationBar.Appearance.BarTintColor = new UIColor(155/255f, 201/255f, 62/2555f, 1.0f);
+            UINavigationBar.Appearance.TintColor = UIColor.White;
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                TextColor = UIColor.White
+            });
 
             return true;
         }
