@@ -4,7 +4,8 @@ using SQLite;
 namespace MyTrips.Classes
 {
     public class Trip
-    {
+    {   
+        //Defines Primary Key in SQLite DB
         [PrimaryKey, AutoIncrement]
         public int Id
         {
@@ -30,5 +31,11 @@ namespace MyTrips.Classes
             get;
             set;
         }
-    }
+
+        // Override method ToString [Available in all objects] to return string with specific format
+		public override string ToString()
+		{
+            return $"{Place} ({DepartureDate:d} - {ReturnDate:d})";
+		}
+	}
 }
