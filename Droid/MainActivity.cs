@@ -30,7 +30,7 @@ namespace MyTrips.Droid
         private void onClickLogin(object sender, EventArgs args) { 
             if (LoginClass.onLogin(usernameEditText.Text, passwordEditText.Text))
             {
-                Intent intent = new Intent(this, typeof(NewTripActivity));
+                Intent intent = new Intent(this, typeof(ListTripsActivity));
                 StartActivity(intent);
             }
         }
