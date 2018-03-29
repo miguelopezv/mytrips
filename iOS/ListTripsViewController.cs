@@ -28,7 +28,7 @@ namespace MyTrips.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-
+            //TODO: Create constants for DB on iOS and Android
             string fileName = "trips_db.sqlite";
             string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library");
             string fullPath = Path.Combine(filePath, fileName);
