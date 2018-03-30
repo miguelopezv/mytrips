@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MyTrips.Classes
 {
-    public class SearchResult
+    public class Venues
     {
         public Meta meta { get; set; }
         public Response response { get; set; }

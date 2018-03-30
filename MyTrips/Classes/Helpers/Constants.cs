@@ -11,8 +11,8 @@ namespace MyTrips.Classes.Helpers
             return $"https://api.foursquare.com/v2/venues/categories?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&v={DateTime.Now.ToString("yyyyMMdd")}";
         }
 
-        public static string ObtainSearchURL(string city) {
-            return $"https://api.foursquare.com/v2/venues/search?near={city}&client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&v={DateTime.Now.ToString("yyyyMMdd")}";
+        public static string ObtainVenuesURL(string city, string categoryId) {
+            return $"https://api.foursquare.com/v2/venues/search?near={city}&categoryId={categoryId}&client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&v={DateTime.Now.ToString("yyyyMMdd")}";
         }
     }
 }
