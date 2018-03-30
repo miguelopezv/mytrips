@@ -33,6 +33,7 @@ namespace MyTrips.Droid
 
             tripsToolbar = FindViewById<Toolbar>(Resource.Id.tripToolbar);
             tripsList = FindViewById < ListView>(Resource.Id.tripsListView);
+            tripsList.ItemClick += TripsList_ItemClick;
 
             SetActionBar(tripsToolbar);
             ActionBar.Title = "My Trips";
@@ -45,6 +46,22 @@ namespace MyTrips.Droid
 			base.OnRestart();
             this.getTrips(fullPath);
 		}
+
+        void TripsList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var selectedTrip = tripLists[e.Position];
+
+            Intent intent = new Intent(this, typeof(TripDetailsActivity));
+            var bundle = new Bundle();
+            bundle.PutString("city", selectedTrip.Place);
+            bundle.PutInt("cityId", selectedTrip.Id);
+            bundle.PutString("departureDate", selectedTrip.DepartureDate.ToString("MMM dd"));
+            bundle.PutString("returnDate", selectedTrip.ReturnDate.ToString("MMM dd"));
+
+            intent.PutExtras(bundle);
+            StartActivity(intent);
+        }
+
 
         public void getTrips(string path) {
             tripLists = new List<Trip>();
