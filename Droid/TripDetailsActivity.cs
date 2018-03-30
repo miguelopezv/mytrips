@@ -20,6 +20,9 @@ namespace MyTrips.Droid
         TextView dateTextView, cityTextView;
         ListView tripDetailsTextView;
 
+        string selectedCity, departureDate, returnDate;
+        int selectedCityId;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -31,6 +34,14 @@ namespace MyTrips.Droid
             dateTextView = FindViewById<TextView>(Resource.Id.dateTextView);
             cityTextView = FindViewById<TextView>(Resource.Id.cityTextView);
             tripDetailsTextView = FindViewById<ListView>(Resource.Id.tripDetailsListview);
+
+            selectedCity = Intent.Extras.GetString("city");
+            departureDate = Intent.Extras.GetString("departureDate");
+            returnDate = Intent.Extras.GetString("returnDate");
+            selectedCityId = Intent.Extras.GetInt("cityId");
+
+            cityTextView.Text = selectedCity;
+            dateTextView.Text = $"{departureDate} - {returnDate}";
 
             SetActionBar(tripDetailsToolbar);
         }
@@ -44,7 +55,7 @@ namespace MyTrips.Droid
 
 		public override bool OnOptionsItemSelected(IMenuItem item)
 		{
-            if(item.TitleFormatted.ToString() == 'Add')
+            if(item.TitleFormatted.ToString() == "Add")
             {
                 
             }
