@@ -110,6 +110,12 @@
     <AndroidResource Include="Resources\menu\Add.xml" />
     <AndroidResource Include="Resources\layout\TripDetails.axml" />
     <AndroidResource Include="Resources\layout\NewPlace.axml" />
+    <AndroidResource Include="Resources\menu\Save.xml" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_save.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_save.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_save.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_save.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_save.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
