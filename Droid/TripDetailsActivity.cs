@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MyTrips.Classes;
 
 namespace MyTrips.Droid
 {
@@ -18,10 +20,15 @@ namespace MyTrips.Droid
     {
         Toolbar tripDetailsToolbar;
         TextView dateTextView, cityTextView;
-        ListView tripDetailsTextView;
+        ListView tripDetailsListView;
 
         string selectedCity, departureDate, returnDate;
         int selectedCityId;
+        List<InterestSite> interestSitesList;
+
+        static string fileName = "trips_db.sqlite";
+        static string filePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        string fullPath = Path.Combine(filePath, fileName);
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,7 +40,7 @@ namespace MyTrips.Droid
             tripDetailsToolbar = FindViewById<Toolbar>(Resource.Id.TripDetailsToolbar);
             dateTextView = FindViewById<TextView>(Resource.Id.dateTextView);
             cityTextView = FindViewById<TextView>(Resource.Id.cityTextView);
-            tripDetailsTextView = FindViewById<ListView>(Resource.Id.tripDetailsListview);
+            tripDetailsListView = FindViewById<ListView>(Resource.Id.tripDetailsListview);
 
             selectedCity = Intent.Extras.GetString("city");
             departureDate = Intent.Extras.GetString("departureDate");
@@ -44,7 +51,24 @@ namespace MyTrips.Droid
             dateTextView.Text = $"{departureDate} - {returnDate}";
 
             SetActionBar(tripDetailsToolbar);
+
+            interestSitesList = DbHelper.returnInterestSite(selectedCityId, fullPath);
+            Console.WriteLine("===================");
+            Console.WriteLine(interestSitesList.Count.ToString());
+            ArrayAdapter arrayAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, interestSitesList);
+
+            tripDetailsListView.Adapter = arrayAdapter;
         }
+
+		protected override void OnRestart()
+		{
+			base.OnRestart();
+
+            interestSitesList = DbHelper.returnInterestSite(selectedCityId, fullPath);
+            ArrayAdapter arrayAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, interestSitesList);
+
+            tripDetailsListView.Adapter = arrayAdapter;
+		}
 
 		public override bool OnCreateOptionsMenu(IMenu menu)
 		{
