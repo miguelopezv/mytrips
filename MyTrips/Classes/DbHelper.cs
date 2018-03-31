@@ -37,5 +37,18 @@ namespace MyTrips.Classes
 
             return trips;
         }
+
+        public static List<InterestSite> returnInterestSite(int tripId, string dbRoute)
+        {
+            List<InterestSite> places = new List<InterestSite>();
+            using(var connection = new SQLite.SQLiteConnection(dbRoute))
+            {
+                connection.CreateTable<InterestSite>();
+                var places2 = connection.Table<InterestSite>().ToList();
+                places = connection.Table<InterestSite>().Where(l => l.TripId == tripId).ToList();
+            }
+
+            return places;
+        }
     }
 }
