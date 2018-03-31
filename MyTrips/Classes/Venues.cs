@@ -193,5 +193,10 @@ namespace MyTrips.Classes
         public bool? hasMenu { get; set; }
         public Menu menu { get; set; }
         public VenuePage venuePage { get; set; }
-    }
+
+		public override string ToString()
+		{
+            return name;
+		}
+	}
 }
