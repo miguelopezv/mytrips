@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using SQLite;
 
 namespace MyTrips.Classes
@@ -36,6 +37,64 @@ namespace MyTrips.Classes
 		public override string ToString()
 		{
             return $"{Place} ({DepartureDate:d} - {ReturnDate:d})";
+		}
+	}
+
+    public class InterestSite
+    {
+        public InterestSite()
+        {
+
+        }
+
+        public InterestSite(Venue venue, int tripId)
+        {
+            Name = venue.name;
+            Lat = (float)venue.location.lat;
+            Lng = (float)venue.location.lng;
+            TripId = tripId;
+            Category = venue.categories.First().name;
+        }
+
+        public int Id
+        {
+            get;
+            set;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public float Lat
+        {
+            get;
+            set;
+        }
+
+        public float Lng
+        {
+            get;
+            set;
+        }
+
+        public int TripId
+        {
+            get;
+            set;
+        }
+
+        public string Category
+        {
+            get;
+            set;
+        }
+
+		public override string ToString()
+		{
+            return Name;
 		}
 	}
 }
