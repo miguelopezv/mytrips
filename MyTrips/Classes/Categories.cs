@@ -26,6 +26,11 @@ namespace MyTrips.Classes
             public string pluralName { get; set; }
             public string shortName { get; set; }
             public Icon icon { get; set; }
+
+            public override string ToString()
+            {
+                return name;
+            }
         }
 
         public class Icon
@@ -33,5 +38,5 @@ namespace MyTrips.Classes
             public string prefix { get; set; }
             public string suffix { get; set; }
         }
-    }
+	}
 }
