@@ -57,7 +57,14 @@ namespace MyTrips.Droid
 		{
             if(item.TitleFormatted.ToString() == "Add")
             {
-                
+                Intent intent = new Intent(this, typeof(NewPlaceActivity));
+
+                Bundle bundle = new Bundle();
+
+                bundle.PutInt("cityId", selectedCityId);
+                bundle.PutString("city", selectedCity);
+
+                StartActivity(intent.PutExtras(bundle));
             }
 			return base.OnOptionsItemSelected(item);
 		}
