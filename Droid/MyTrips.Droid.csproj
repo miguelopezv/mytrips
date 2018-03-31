@@ -83,6 +83,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NewTripActivity.cs" />
     <Compile Include="ListTripsActivity.cs" />
+    <Compile Include="TripDetailsActivity.cs" />
+    <Compile Include="NewPlaceActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -106,6 +108,8 @@
     <AndroidResource Include="Resources\mipmap-mdpi\ic_add.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\ic_add.png" />
     <AndroidResource Include="Resources\menu\Add.xml" />
+    <AndroidResource Include="Resources\layout\TripDetails.axml" />
+    <AndroidResource Include="Resources\layout\NewPlace.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />

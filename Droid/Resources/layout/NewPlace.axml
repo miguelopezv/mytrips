@@ -9,7 +9,7 @@
         android:background="?android:attr/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/toolbar1">
+        android:id="@+id/newPlaceToolbar">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

@@ -44,26 +44,47 @@ namespace MyTrips.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070009
-			public const int addMenu = 2131165193;
+			// aapt resource value: 0x7f07000d
+			public const int TripDetailsToolbar = 2131165197;
+			
+			// aapt resource value: 0x7f070011
+			public const int addMenu = 2131165201;
+			
+			// aapt resource value: 0x7f070007
+			public const int categoriesSpinner = 2131165191;
+			
+			// aapt resource value: 0x7f07000f
+			public const int cityTextView = 2131165199;
+			
+			// aapt resource value: 0x7f07000e
+			public const int dateTextView = 2131165198;
+			
+			// aapt resource value: 0x7f07000a
+			public const int departureDatePicker = 2131165194;
 			
 			// aapt resource value: 0x7f070006
-			public const int departureDatePicker = 2131165190;
+			public const int filterEditText = 2131165190;
 			
 			// aapt resource value: 0x7f070004
 			public const int loginButton = 2131165188;
 			
+			// aapt resource value: 0x7f070005
+			public const int newPlaceToolbar = 2131165189;
+			
 			// aapt resource value: 0x7f070003
 			public const int passwordEditText = 2131165187;
 			
-			// aapt resource value: 0x7f070005
-			public const int placeEditText = 2131165189;
+			// aapt resource value: 0x7f070009
+			public const int placeEditText = 2131165193;
 			
-			// aapt resource value: 0x7f070007
-			public const int returnDatePicker = 2131165191;
+			// aapt resource value: 0x7f07000b
+			public const int returnDatePicker = 2131165195;
 			
-			// aapt resource value: 0x7f070008
-			public const int saveButton = 2131165192;
+			// aapt resource value: 0x7f07000c
+			public const int saveButton = 2131165196;
+			
+			// aapt resource value: 0x7f070010
+			public const int tripDetailsListview = 2131165200;
 			
 			// aapt resource value: 0x7f070000
 			public const int tripToolbar = 2131165184;
@@ -73,6 +94,9 @@ namespace MyTrips.Droid
 			
 			// aapt resource value: 0x7f070002
 			public const int usernameEditText = 2131165186;
+			
+			// aapt resource value: 0x7f070008
+			public const int venuesListView = 2131165192;
 			
 			static Id()
 			{
@@ -94,7 +118,13 @@ namespace MyTrips.Droid
 			public const int Main = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int NewTrip = 2130903042;
+			public const int NewPlace = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int NewTrip = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int TripDetails = 2130903044;
 			
 			static Layout()
 			{
