@@ -83,6 +83,9 @@ namespace MyTrips.Droid
 			// aapt resource value: 0x7f07000c
 			public const int saveButton = 2131165196;
 			
+			// aapt resource value: 0x7f070012
+			public const int saveMenu = 2131165202;
+			
 			// aapt resource value: 0x7f070010
 			public const int tripDetailsListview = 2131165200;
 			
@@ -142,6 +145,9 @@ namespace MyTrips.Droid
 			// aapt resource value: 0x7f060000
 			public const int Add = 2131099648;
 			
+			// aapt resource value: 0x7f060001
+			public const int Save = 2131099649;
+			
 			static Menu()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -159,7 +165,10 @@ namespace MyTrips.Droid
 			public const int ic_add = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int ic_save = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
 			
 			static Mipmap()
 			{
