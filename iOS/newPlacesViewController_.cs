@@ -55,5 +55,17 @@ namespace MyTrips.iOS
 
             return cell;
 		}
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+            if(segue.Identifier == "addNewPlaceSegueIdentifier")
+            {
+                var destinationViewController = segue.DestinationViewController as addNewPlaceViewController;
+                destinationViewController.selectedCity = selectedCity;
+                destinationViewController.selectedCityId = selectedCityId;
+            }
+
+            base.PrepareForSegue(segue, sender);
+		}
 	}
 }
