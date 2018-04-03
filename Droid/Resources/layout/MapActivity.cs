@@ -35,6 +35,7 @@ namespace MyTrips.Droid
         {
             base.OnCreate(savedInstanceState);
             // Create your application here
+            //TODO: Fix maps
             SetContentView(Resource.Layout.Map);
 
             latitudes = Intent.Extras.GetDoubleArray("latitudes");
