@@ -56,7 +56,33 @@ namespace MyTrips.Droid
             ArrayAdapter arrayAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, interestSitesList);
 
             tripDetailsListView.Adapter = arrayAdapter;
+
+            cityTextView.Click += CityTextView_Click;
         }
+
+        void CityTextView_Click(object sender, EventArgs e)
+        {
+            double[] latitudes = new double[interestSitesList.Count], longitudes = new double[interestSitesList.Count];
+
+            int count = 0;
+            foreach (var place in interestSitesList)
+            {
+                latitudes[count] = place.Lat;
+                longitudes[count] = place.Lng;
+                count++;
+            }
+
+            Intent intent = new Intent(this, typeof(MapActivity));
+
+            Bundle bundle = new Bundle();
+            bundle.PutDoubleArray("latitudes", latitudes);
+            bundle.PutDoubleArray("longitudes", longitudes);
+
+            intent.PutExtras(bundle);
+
+            StartActivity(intent);
+        }
+
 
 		protected override void OnRestart()
 		{
