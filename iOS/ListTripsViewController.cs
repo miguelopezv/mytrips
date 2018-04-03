@@ -54,6 +54,19 @@ namespace MyTrips.iOS
 		public override nint RowsInSection(UITableView tableView, nint section)
 		{
             return ListTrips.Count;
-		}	
+		}
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+            if(segue.Identifier == "interestSiteSegueIdentifier")
+            {
+                var viewControllerDestination = segue.DestinationViewController as newPlacesViewController;
+
+                viewControllerDestination.selectedCity = ListTrips[TableView.IndexPathForSelectedRow.Row].Place;
+                viewControllerDestination.selectedCityId = ListTrips[TableView.IndexPathForSelectedRow.Row].Id;
+            }
+
+			base.PrepareForSegue(segue, sender);
+		}
 	}
 }
