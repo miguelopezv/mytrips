@@ -183,6 +183,9 @@ namespace MyTrips.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040002
+			public const int GoogleMapsAPI = 2130968578;
+			
 			// aapt resource value: 0x7f040001
 			public const int app_name = 2130968577;
 			
