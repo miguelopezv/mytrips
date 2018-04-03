@@ -14,5 +14,8 @@ namespace MyTrips.iOS
     [Register ("newPlacesViewController")]
     partial class newPlacesViewController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
