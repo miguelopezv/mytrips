@@ -48,7 +48,7 @@ namespace MyTrips.Droid
                 Toast.MakeText(this, "Trip Added!", ToastLength.Short).Show();
             } else {
                 Toast.MakeText(this, "There was an error. Try again.", ToastLength.Short).Show();
-            };
+            }
         }
 
     }

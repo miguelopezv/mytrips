@@ -53,8 +53,6 @@ namespace MyTrips.Droid
             SetActionBar(tripDetailsToolbar);
 
             interestSitesList = DbHelper.returnInterestSite(selectedCityId, fullPath);
-            Console.WriteLine("===================");
-            Console.WriteLine(interestSitesList.Count.ToString());
             ArrayAdapter arrayAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, interestSitesList);
 
             tripDetailsListView.Adapter = arrayAdapter;
