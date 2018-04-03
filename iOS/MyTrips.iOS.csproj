@@ -154,6 +154,10 @@
     <Compile Include="addNewPlaceViewController.designer.cs">
       <DependentUpon>addNewPlaceViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlaceMapViewController.cs" />
+    <Compile Include="PlaceMapViewController.designer.cs">
+      <DependentUpon>PlaceMapViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

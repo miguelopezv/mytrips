@@ -63,6 +63,10 @@ namespace MyTrips.iOS
                 var destinationViewController = segue.DestinationViewController as addNewPlaceViewController;
                 destinationViewController.selectedCity = selectedCity;
                 destinationViewController.selectedCityId = selectedCityId;
+            } else if (segue.Identifier == "mapSegueIdentifier")
+            {
+                var destinationViewController = segue.DestinationViewController as PlaceMapViewController;
+                destinationViewController.places = places;
             }
 
             base.PrepareForSegue(segue, sender);
